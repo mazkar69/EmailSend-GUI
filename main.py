@@ -18,9 +18,9 @@ class Email():
         root.geometry("800x450+200+50")
         icon=PhotoImage(file="email_32.png")
         
-
+        self.root.config(bg="#717370")
         root.resizable(0,0)
-        root.config(bg='white')
+        # root.config(bg='white')
         root.iconphoto(False, icon)
 
         #===============notification status===============
@@ -46,19 +46,19 @@ class Email():
 
         #================Laleb===============================
 
-        to=Label(root,text='To (Email Address)',font=('times new roman',18),bg='white').place(x=50,y=50)
-        subj=Label(root,text='SUBJECT',font=('times new roman',18),bg='white').place(x=50,y=100)
-        msg=Label(root,text='MASSAGE',font=('times new roman',18),bg='white').place(x=50,y=150)
+        to=Label(root,text='To (Email Address)',font=('times new roman',18,'bold'),bg='#717370',fg="white").place(x=50,y=50)
+        subj=Label(root,text='SUBJECT',font=('times new roman',18,'bold'),fg='white',bg='#717370').place(x=50,y=100)
+        msg=Label(root,text='MASSAGE',font=('times new roman',18,'bold'),fg='white',bg='#717370').place(x=50,y=150)
         
 
         #==================Entry field==================
-        self.txt_to=Entry(root,font=('times new roman',14),bg='lightyellow')
+        self.txt_to=Entry(root,font=('times new roman',14),bg='#f0f7eb')
         self.txt_to.place(x=350,y=50,w=350,h=30)
 
-        self.subj=Entry(root,font=('times new roman',14),bg='lightyellow')
+        self.subj=Entry(root,font=('times new roman',14),bg='#f0f7eb')
         self.subj.place(x=350,y=100,w=400,h=30)
 
-        self.msg=Text(root,font=('times new roman',15,'italic'),bg='lightyellow')
+        self.msg=Text(root,font=('times new roman',15,'italic'),bg='#f0f7eb')
         self.msg.place(x=350,y=150,w=400,h=100)
 
 
@@ -71,23 +71,23 @@ class Email():
 
         #==========browse btn=============
 
-        self.upload_img=ImageTk.PhotoImage(file="upload.png")
+        self.upload_img=PhotoImage(file="upload.png")
         
 
         self.browse_btn=Button(root,image=self.upload_img,cursor='hand2',state=DISABLED,command=self.browse_file)
         self.browse_btn.place(x=720,y=45)
 
         #==================status bar=====================
-        self.lbl_total=Label(root,text='',font=('times new roman',18),bg='white')
+        self.lbl_total=Label(root,text='',font=('times new roman',18),bg='#717370')
         self.lbl_total.place(x=50,y=370)
 
-        self.lbl_sent=Label(root,text='',font=('times new roman',18),bg='white',fg='green')
+        self.lbl_sent=Label(root,text='',font=('times new roman',18,'bold'),fg='green',bg='#717370')
         self.lbl_sent.place(x=300,y=370)
 
-        self.lbl_left=Label(root,text='',font=('times new roman',18),bg='white',fg="orange")
+        self.lbl_left=Label(root,text='',font=('times new roman',18),fg="orange",bg='#717370')
         self.lbl_left.place(x=420,y=370)
 
-        self.lbl_failed=Label(root,text='',font=('times new roman',18),bg='white',fg="red")
+        self.lbl_failed=Label(root,text='',font=('times new roman',18),fg="red",bg='#717370')
         self.lbl_failed.place(x=550,y=370)
 
         self.check_file_exits()
@@ -234,7 +234,7 @@ class Email():
 
 
         from_=Label(self.root1,text='Email Address',font=('times new roman',18),bg='white').place(x=50,y=100)
-        password=Label(self.root,text='PASSWORD',font=('times new roman',18),bg='white').place(x=50,y=200)
+        password=Label(self.root1,text='PASSWORD',font=('times new roman',18),bg='white').place(x=50,y=200)
 
         self.from_to=Entry(self.root1,font=('times new roman',14),bg='lightyellow')
         self.from_to.place(x=250,y=100,w=330,h=30)
